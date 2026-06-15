@@ -8,7 +8,7 @@
 *Turn any LLM into a deterministic World Cup prediction engine with one prompt.*
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Skill Version](https://img.shields.io/badge/skill-v1.0-blue.svg?style=flat-square)](skill.md)
+[![Skill Version](https://img.shields.io/badge/skill-v1.0-blue.svg?style=flat-square)](SKILL.md)
 [![Stars](https://img.shields.io/github/stars/TradingAi666/worldcup2026-prediction-skill?style=flat-square&color=yellow)](https://github.com/TradingAi666/worldcup2026-prediction-skill/stargazers)
 [![Forks](https://img.shields.io/github/forks/TradingAi666/worldcup2026-prediction-skill?style=flat-square&color=orange)](https://github.com/TradingAi666/worldcup2026-prediction-skill/network/members)
 [![Last Commit](https://img.shields.io/github/last-commit/TradingAi666/worldcup2026-prediction-skill?style=flat-square)](https://github.com/TradingAi666/worldcup2026-prediction-skill/commits/main)
@@ -17,13 +17,13 @@
 [![Language](https://img.shields.io/badge/lang-中文%20%7C%20English-red.svg?style=flat-square)](#)
 [![Compatible](https://img.shields.io/badge/LLM-DeepSeek%20%7C%20Qwen%20%7C%20GPT%20%7C%20Claude-purple.svg?style=flat-square)](#兼容模型)
 [![Format](https://img.shields.io/badge/output-strict%20JSON-success.svg?style=flat-square)](#输出契约)
-[![Teams](https://img.shields.io/badge/teams-48-9cf.svg?style=flat-square)](skill.md#四球队资料库核心依据)
+[![Teams](https://img.shields.io/badge/teams-48-9cf.svg?style=flat-square)](SKILL.md#四球队资料库核心依据)
 [![Matches](https://img.shields.io/badge/matches-64-9cf.svg?style=flat-square)](#)
 [![Updated](https://img.shields.io/badge/data-2026--06--11-informational.svg?style=flat-square)](#)
 
 🔗 **Live Demo** · [worldcup.youliaoyun.com](http://worldcup.youliaoyun.com)
 &nbsp;&nbsp;|&nbsp;&nbsp;
-🇨🇳 **中文** · [skill.md](skill.md)
+🇨🇳 **中文** · [SKILL.md](SKILL.md)
 &nbsp;&nbsp;|&nbsp;&nbsp;
 📺 **Video Walkthrough** · *Coming soon*
 
@@ -58,7 +58,7 @@
 
 | 特性 | 说明 |
 |:---|:---|
-| 🎯 **零依赖** | 单文件 `skill.md`,无需训练、无需向量库、无需 API server |
+| 🎯 **零依赖** | 单文件 `SKILL.md`,无需训练、无需向量库、无需 API server |
 | 🧱 **资料锁死** | 48 队完整资料库写在 prompt 内,模型只许引用 / 不许编造 |
 | 📐 **方法论固化** | 4 维评估权重 + 胜率上限 85% 铁律,杜绝"凭感觉胡说" |
 | 📦 **严格 JSON** | 输出格式锁死,前端可直接渲染,零后处理 |
@@ -110,7 +110,7 @@
         └──────────────┬───────────────┘
                        │
        ┌───────────────┴────────────────┐
-       │     skill.md (system prompt)    │
+       │     SKILL.md (system prompt)    │
        ├────────────────────────────────┤
        │                                 │
        │  ① 资料库 ─ Knowledge Base      │
@@ -151,7 +151,7 @@
 | 🏠 二线 / 东道主档 | 美国 · 墨西哥 · 加拿大 · 瑞士 · 韩国 · 比利时 · 塞内加尔 · ... |
 | 🌱 中游 / 新军档 | 库拉索 · 佛得角 · 乌兹别克斯坦 · 约旦 · 海地 · ... |
 
-**全部 48 队的核心球员、近况、隐忧均写死在 [`skill.md`](skill.md#四球队资料库核心依据) 内,模型只许引用,严禁编造。**
+**全部 48 队的核心球员、近况、隐忧均写死在 [`SKILL.md`](SKILL.md#四球队资料库核心依据) 内,模型只许引用,严禁编造。**
 
 #### Layer 2 · 方法论
 
@@ -186,7 +186,7 @@ curl https://api.deepseek.com/chat/completions \
     "model": "deepseek-v4-pro",
     "response_format": {"type": "json_object"},
     "messages": [
-      {"role": "system", "content": "<skill.md 全文粘贴到这里>"},
+      {"role": "system", "content": "<SKILL.md 全文粘贴到这里>"},
       {"role": "user", "content": "请预测这场 2026 世界杯比赛:【小组赛】墨西哥 vs 南非。严格按约束文档的 JSON 格式输出。"}
     ]
   }'
@@ -197,7 +197,7 @@ curl https://api.deepseek.com/chat/completions \
 ```python
 import openai, pathlib, json
 
-SKILL = pathlib.Path("skill.md").read_text(encoding="utf-8")
+SKILL = pathlib.Path("SKILL.md").read_text(encoding="utf-8")
 client = openai.OpenAI(base_url="https://api.deepseek.com", api_key="...")
 
 def predict(team_a: str, team_b: str, stage: str = "小组赛") -> dict:
@@ -220,7 +220,7 @@ print(predict("墨西哥", "南非"))
 import OpenAI from "openai"
 import { readFileSync } from "node:fs"
 
-const SKILL = readFileSync("skill.md", "utf-8")
+const SKILL = readFileSync("SKILL.md", "utf-8")
 const client = new OpenAI({ baseURL: "https://api.deepseek.com", apiKey: process.env.DEEPSEEK_API_KEY })
 
 export async function predict(teamA: string, teamB: string, stage = "小组赛") {
@@ -336,7 +336,7 @@ export async function predict(teamA: string, teamB: string, stage = "小组赛")
 
 ```
 ┌─────────────────────────────────────────┐
-│  skill.md  (~10 KB · 一二三四五节 锁死)  │
+│  SKILL.md  (~10 KB · 一二三四五节 锁死)  │
 │  ────────────────────────────────────   │
 │  一、赛事基本盘                          │
 │  二、预测方法论                          │
@@ -395,7 +395,7 @@ export async function predict(teamA: string, teamB: string, stage = "小组赛")
 <summary><b>Q1: 这是机器学习模型吗?需要训练吗?</b></summary>
 
 **不是,不需要。** 本项目本质是**一份 system prompt(文本文件)**。
-你拿任何一个开箱即用的 LLM(GPT / Claude / DeepSeek 等),把 `skill.md` 全文塞进它的 system 消息,它就具备了"世界杯专家"的能力。
+你拿任何一个开箱即用的 LLM(GPT / Claude / DeepSeek 等),把 `SKILL.md` 全文塞进它的 system 消息,它就具备了"世界杯专家"的能力。
 
 零训练、零向量库、零依赖。
 </details>
@@ -421,7 +421,7 @@ MIT 协议,**可以**。但请注意:
 <details>
 <summary><b>Q4: 资料库里我喜欢的球队漏写了/写错了,怎么办?</b></summary>
 
-欢迎提 PR 修订 `skill.md` 第四节。
+欢迎提 PR 修订 `SKILL.md` 第四节。
 请在 PR 描述里贴上信息来源(官方/权威媒体),不接受小道消息。
 </details>
 
@@ -458,7 +458,7 @@ MIT 协议,**可以**。但请注意:
 git clone https://github.com/TradingAi666/worldcup2026-prediction-skill.git
 cd worldcup2026-prediction-skill
 git checkout -b feature/your-update
-# 修改 skill.md 或 README.md
+# 修改 SKILL.md 或 README.md
 git commit -m "docs: update XX team roster"
 git push origin feature/your-update
 # 然后到 GitHub 开 PR

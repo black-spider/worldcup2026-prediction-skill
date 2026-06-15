@@ -21,7 +21,7 @@
 
 | # | 物料 | 哪里拿 | 花钱吗 |
 |:---:|:---|:---|:---:|
-| 1 | **`skill.md` 文件** | 从 GitHub 仓库下载 | 免费 |
+| 1 | **`SKILL.md` 文件** | 从 GitHub 仓库下载 | 免费 |
 | 2 | **DeepSeek API Key** | deepseek.com 注册并领取 | 注册送 5 元 · 跑 1000 场预测花不完 |
 | 3 | **Agent 工具(三选一)** | 网页版 / Trae / Codex CLI | 全部免费 |
 
@@ -29,16 +29,16 @@
 
 ---
 
-# 📥 第 0 步:下载 skill.md(所有路径共用)
+# 📥 第 0 步:下载 SKILL.md(所有路径共用)
 
-无论你走哪条路径,都需要先拿到 `skill.md` 这个文件。
+无论你走哪条路径,都需要先拿到 `SKILL.md` 这个文件。
 
 ### 方法 ① 网页直接下载(推荐 · 不需要装 Git)
 
 1. 浏览器打开:**https://github.com/TradingAi666/worldcup2026-prediction-skill**
-2. 看到文件列表里有一行 `skill.md`,**点它**
+2. 看到文件列表里有一行 `SKILL.md`,**点它**
 3. 进入文件页面,右上角找到 **"Raw"** 或下载按钮(⬇️ icon)
-4. **右键 → 另存为 → skill.md**,保存到电脑桌面
+4. **右键 → 另存为 → SKILL.md**,保存到电脑桌面
 
 > 💡 文件大小只有 **10KB**,本质就是一段中文文本,你可以用记事本/TextEdit 直接打开看。
 
@@ -94,7 +94,7 @@ cd worldcup2026-prediction-skill
 
 ## 步骤 A2 · 注入 Skill(关键一步)
 
-1. **打开你下载好的 `skill.md`** 文件(双击,用记事本/文本编辑器打开)
+1. **打开你下载好的 `SKILL.md`** 文件(双击,用记事本/文本编辑器打开)
 2. **`Ctrl+A` 全选 → `Ctrl+C` 复制全文**
 3. 回到 DeepSeek 聊天框,**粘贴进去**(`Ctrl+V`)
 4. 在粘贴内容的**最后一行**,加一句:
@@ -135,13 +135,13 @@ cd worldcup2026-prediction-skill
 
 ## 路径 A · 后续怎么继续提问?
 
-每次想换一场比赛,**不需要重新粘 skill.md**,只要在同一个对话里继续发:
+每次想换一场比赛,**不需要重新粘 SKILL.md**,只要在同一个对话里继续发:
 
 > "再预测一场:【小组赛】巴西 vs 摩洛哥"
 
 模型会延续之前的约束,直接给新的 JSON。
 
-> ⚠️ 注意:如果你**新建对话**,就要重新粘 skill.md 全文。一对话一注入。
+> ⚠️ 注意:如果你**新建对话**,就要重新粘 SKILL.md 全文。一对话一注入。
 
 ---
 
@@ -173,32 +173,32 @@ cd worldcup2026-prediction-skill
 
 ---
 
-## 步骤 B2 · 新建项目并放入 skill.md
+## 步骤 B2 · 新建项目并放入 SKILL.md
 
 1. Trae 启动后,左上角 **"打开文件夹"** 或 **"新建项目"**
 2. 在电脑桌面新建一个空文件夹,叫 `worldcup`(随便起)
 3. 用 Trae 打开这个文件夹
-4. **把你下载好的 `skill.md` 拖进 Trae 左侧的文件树里**
-5. 现在 `skill.md` 就在你的项目里了
+4. **把你下载好的 `SKILL.md` 拖进 Trae 左侧的文件树里**
+5. 现在 `SKILL.md` 就在你的项目里了
 
 ---
 
-## 步骤 B3 · 在 Trae 里把 skill.md 设成 AI 的"角色"
+## 步骤 B3 · 在 Trae 里把 SKILL.md 设成 AI 的"角色"
 
 1. Trae 右侧有个 **AI 对话面板**(看不到的话,顶部菜单 View → AI Chat)
 2. AI 面板里有一个 **"# 引用上下文"** 按钮(或 `@` 输入)
-3. **打 `@` 选择 `skill.md`**,Trae 就会把整份 Skill 自动塞进 system prompt
+3. **打 `@` 选择 `SKILL.md`**,Trae 就会把整份 Skill 自动塞进 system prompt
 4. 然后输入你的问题:
 
    ```
-   请基于 @skill.md 的全部约束,预测这场比赛:
+   请基于 @SKILL.md 的全部约束,预测这场比赛:
    【小组赛】墨西哥 vs 南非
    严格输出 JSON。
    ```
 
 5. 回车发送,等待 AI 输出
 
-📷 *[截图位:AI Chat 面板里 @skill.md 后提问 → 返回 JSON]*
+📷 *[截图位:AI Chat 面板里 @SKILL.md 后提问 → 返回 JSON]*
 
 ---
 
@@ -222,7 +222,7 @@ Trae 默认用字节自家模型(也好用),但如果你想保持成本最低 + 
 
 在 AI 面板里直接问:
 
-> 请基于 @skill.md,把今天和明天 A 组的 4 场比赛全部预测一遍,逐场输出 JSON。
+> 请基于 @SKILL.md,把今天和明天 A 组的 4 场比赛全部预测一遍,逐场输出 JSON。
 
 Trae 会逐个返回,你可以**直接 Ctrl+S 把对话保存为 markdown**,留作复盘。
 
@@ -299,10 +299,10 @@ export OPENAI_BASE_URL="https://api.deepseek.com/v1"
 
 ---
 
-## 步骤 C4 · 把 skill.md 放进 Codex 的工作目录
+## 步骤 C4 · 把 SKILL.md 放进 Codex 的工作目录
 
 ```bash
-cd ~/Desktop                              # 进到你存 skill.md 的目录
+cd ~/Desktop                              # 进到你存 SKILL.md 的目录
 codex --model deepseek-v4-pro             # 启动 codex,指定模型
 ```
 
@@ -310,12 +310,12 @@ Codex 启动后是一个交互式终端,**像和 AI 聊天一样**。
 在 Codex 里直接说:
 
 ```
-请读取当前目录下的 skill.md,把它的内容作为系统提示词的全部约束。
+请读取当前目录下的 SKILL.md,把它的内容作为系统提示词的全部约束。
 然后预测这场:【小组赛】墨西哥 vs 南非,严格按文档 JSON 输出。
 ```
 
 它会:
-1. 自动读 `skill.md`
+1. 自动读 `SKILL.md`
 2. 把全文作为 system prompt 注入
 3. 调用 DeepSeek 返回 JSON
 
@@ -336,7 +336,7 @@ curl https://api.deepseek.com/v1/chat/completions \
   "model": "deepseek-v4-pro",
   "response_format": {"type": "json_object"},
   "messages": [
-    {"role": "system", "content": $(jq -Rs . < skill.md)},
+    {"role": "system", "content": $(jq -Rs . < SKILL.md)},
     {"role": "user",   "content": "请预测这场 2026 世界杯比赛:【小组赛】墨西哥 vs 南非。严格按约束文档 JSON 输出。"}
   ]
 }
@@ -376,8 +376,8 @@ EOF
 <details>
 <summary><b>问题 2:模型瞎编球员伤病</b></summary>
 
-**原因**:你可能粘漏了 skill.md,或者 skill.md 第六节(每日情报区)被人改坏了。
-**解决**:重新下载一份原版 skill.md,完整粘贴。
+**原因**:你可能粘漏了 SKILL.md,或者 SKILL.md 第六节(每日情报区)被人改坏了。
+**解决**:重新下载一份原版 SKILL.md,完整粘贴。
 </details>
 
 <details>
@@ -421,7 +421,7 @@ EOF
 | 📊 **导出 Excel** | 让 AI 把每场 JSON 串起来,导成 CSV 给到飞书多维表格 |
 | 🤖 **微信群机器人** | 用 Trae 写个简单脚本,接到企业微信 webhook |
 | 🌐 **做你自己的预测网站** | 拿 README 里的 Node.js 代码,放到 Vercel 一键部署 |
-| 📝 **改造成"NBA 季后赛 Skill"** | 把 skill.md 的资料库换成 NBA 球队,方法论照搬 |
+| 📝 **改造成"NBA 季后赛 Skill"** | 把 SKILL.md 的资料库换成 NBA 球队,方法论照搬 |
 | 🎙️ **做内容创作** | 直接把 JSON 喂给你的稿子/视频脚本,作为 fact-checking 基础数据 |
 
 ---
